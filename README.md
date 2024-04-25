@@ -31,10 +31,15 @@ ip a
 ```
 ### 2.4 安装x11vnc并启动服务
 (亲测-原教程里面的tigerVNC配置成功但是VNCviewer连接不上)
+
 教程：https://blog.csdn.net/weixin_43878078/article/details/122137067
+
 注意：x11vnc.conf配置文件可以放到自定义的路径下，服务密码可以设置成123456
+
 我的路径：/etc/x11vnc.conf
+
 我的密码：123456
+
 启动服务指令：
 ```
   source /etc/x11vnc.conf
@@ -42,7 +47,9 @@ ip a
 ## 3. 安装Flir相机的SDK
 ### 3.1 下载sdk，并通过xftp传到radxa中
 下载地址：https://www.flir.com/products/spinnaker-sdk/?vertical=machine+vision&segment=iis
+
 下载版本：spinnaker-2.7.0.128
+
 选用版本：arm64_focal
 
 ### 3.2 安装gedit
@@ -51,7 +58,11 @@ ip a
   sudo apt install gedit
 ```
 ### 3.3 安装spinnaker sdk
+
 注释掉install_spinnaker_arm.sh中spinview qt相关的代码
+
 ![image](https://github.com/Xinzhe99/Config-Radxa-Zero/assets/113503163/fee0799d-9eb0-4826-9e71-cdb9a1cb5071)
+
 接下来，完全按照README_ARM文件中的操作进行即可。
+
 【1：确保buffer_size从16MB改到1000MB，2：确保USB权限(添加给radxa用户即可)】
