@@ -25,9 +25,9 @@ ip a
 ```
 ### 2.3 安装ssh并启动服务
 ```
-  sudo apt-get update
-  sudo apt-get install ssh
-  sudo service sshd restart
+sudo apt-get update
+sudo apt-get install ssh
+sudo service sshd restart
 ```
 ### 2.4 安装x11vnc并启动服务
 (亲测-原教程里面的tigerVNC配置成功但是VNCviewer连接不上)
@@ -58,7 +58,7 @@ ip a
 ### 3.2 安装gedit
 便于后面注释操作
 ```
-  sudo apt install gedit
+sudo apt install gedit
 ```
 ### 3.3 安装spinnaker sdk
 
@@ -66,6 +66,12 @@ ip a
 
 ![image](https://github.com/Xinzhe99/Config-Radxa-Zero/assets/113503163/fee0799d-9eb0-4826-9e71-cdb9a1cb5071)
 
-接下来，完全按照README_ARM文件中的操作进行即可。
 
+接下来，完全按照README_ARM文件中的一步步操作即可。
+
+打开教程：
+
+```
+sudo gedit README_ARM
+```
 【1：确保buffer_size从16MB改到1000MB，2：确保USB权限(添加给radxa用户即可)】
