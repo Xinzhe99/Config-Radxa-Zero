@@ -42,8 +42,11 @@ sudo service sshd restart
 
 启动服务指令：
 ```
-  source /etc/x11vnc.conf
+source /etc/x11vnc.conf
 ```
+
+亲测vnc远程速度有点慢。
+
 ## 3. 安装Flir相机的SDK
 ### 3.1 下载sdk，并通过xftp传到radxa中
 下载地址：https://www.flir.com/products/spinnaker-sdk/?vertical=machine+vision&segment=iis
