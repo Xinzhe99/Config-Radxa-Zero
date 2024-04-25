@@ -1,5 +1,5 @@
 # Config-Radxa-Zero
-
+官方教程地址：[Radxa-Zero3]([https://github.com/radxa-build/radxa-zero3/releases](https://docs.radxa.com/zero/zero3/getting-started))
 ## 1. 烧录系统
 
 ### 1.1 下载系统镜像
