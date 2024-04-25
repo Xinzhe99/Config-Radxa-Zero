@@ -77,4 +77,48 @@ sudo apt install gedit
 ```
 sudo gedit README_ARM
 ```
-【1：确保buffer_size从16MB改到1000MB，2：确保USB权限(添加给radxa用户即可)】
+### 3.4. 【选】确保buffer_size从16MB改到1000MB
+The Spinnaker installer asks to automatically set the appropriate USB-FS memory
+settings, but you can also run the configuration script at any time:
+```
+$ sudo sh configure_usbfs.sh
+```
+To manually configure the USB-FS memory:
+
+1. If the /etc/rc.local file does NOT already exist on your system, run the
+   following commands to create and make it executable
+```
+$ sudo touch /etc/rc.local
+$ sudo chmod 744 /etc/rc.local
+```
+2. Open the /etc/rc.local file in any text editor,
+   
+```
+$ sudo nano /etc/rc.local
+```
+and paste the following command at the end of the file:
+```
+sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb'
+```
+
+3. Save your changes and close the file.
+
+4. Restart the machine.
+
+To confirm that the memory limit has been updated, run the command:
+```
+$ cat /sys/module/usbcore/parameters/usbfs_memory_mb
+```
+If this fails to set the memory limit, one can TEMPORARILY modify the
+USB-FS memory until the next restart by running the following command:
+```
+$ sudo sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb'
+```
+
+If using multiple USB3 cameras, the USB-FS memory limit may need to exceed 1000.
+More information on these changes can be found at:
+<https://www.flir.com/support-center/iis/machine-vision/application-note/understanding-usbfs-on-linux>
+
+### 3.5：确保USB权限(添加给radxa用户即可)】
+
+安装sdk过程中，会询问是否要加用户到权限群中，键入radxa即可
