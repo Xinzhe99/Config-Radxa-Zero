@@ -122,3 +122,6 @@ More information on these changes can be found at:
 ### 3.5：确保USB权限(添加给radxa用户即可)】
 
 安装sdk过程中，会询问是否要加用户到权限群中，键入radxa即可
+
+### 若sd卡出现损坏，按照以下网站中方法2来进行格式化
+<https://tw.easeus.com/partition-manager-tips/restore-or-format-sd-card-to-full-capacity.html>
