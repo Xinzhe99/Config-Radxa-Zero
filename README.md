@@ -6,7 +6,8 @@
 [Radxa-Zero3 Releases](https://github.com/radxa-build/radxa-zero3/releases)
 
 or
-[official](https://github.com/radxa-build/radxa-zero3/releases](https://docs.radxa.com/zero/zero3/getting-started/download)
+
+[official](https://docs.radxa.com/zero/zero3/getting-started/download)
 
 ![image](https://github.com/Xinzhe99/Config-Radxa-Zero/assets/113503163/24b2a545-1474-4326-8620-c2f19561d010)
 
