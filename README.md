@@ -139,16 +139,18 @@ assign
 
 ### 4. 设置自动登录
 开启自启程序需要设置桌面自动登录,修改 /etc/lightdm/lightdm.conf 文件
-
+```
 sudo vim /etc/lightdm/lightdm.conf
-找到 [Seat:*] 下的 #autologin-user= ，将这个配置修改为你需要登录的用户
+```
 
+找到 [Seat:*] 下的 #autologin-user= ，将这个配置修改为你需要登录的用户
+```
 [Seat:*]
 ...
 autologin-user=radxa
 autologin-user-timeout=0
 ...
-
+```
 ### 5. 编写自启程序sh
 ```
 # 进入程序所在目录
