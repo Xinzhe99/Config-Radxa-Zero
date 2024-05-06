@@ -31,7 +31,7 @@ ip a
 ```
 sudo apt-get update
 sudo apt-get install ssh
-sudo service sshd restart
+sudo service ssh restart
 ```
 ### 2.4 安装x11vnc并启动服务
 (亲测-原教程里面的tigerVNC配置成功但是VNCviewer连接不上)
