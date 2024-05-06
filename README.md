@@ -153,8 +153,8 @@ autologin-user=radxa
 autologin-user-timeout=0
 ...
 
+### 5. 编写自启程序sh
 ```
-### 编写自启程序sh
 # 进入程序所在目录
 cd /opt/spinnaker/bin/
 # 存储 sudo 密码
@@ -162,5 +162,5 @@ sudo_pwd="radxa"
 # 将 sudo 密码输入至 sudo 环境，运行Acquisition
 echo "${sudo_pwd}" | sudo -S ./Acquisition
 ```
-### 开启自启sh文件
+### 6. 开启开机自启sh文件
 桌面中，找到系统应用里面的start application，把sh脚本添加进去即可
