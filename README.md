@@ -153,6 +153,10 @@ autologin-user-timeout=0
 ```
 ### 5. 编写自启程序sh
 ```
+# 关闭自动休眠
+xset s off
+xset -dpms
+xset s noblank
 # 进入程序所在目录
 cd /opt/spinnaker/bin/
 # 存储 sudo 密码
@@ -162,3 +166,5 @@ echo "${sudo_pwd}" | sudo -S ./Acquisition
 ```
 ### 6. 开启开机自启sh文件
 桌面中，找到系统应用里面的start application，把sh脚本添加进去即可
+
+### 7. 关闭系统自动息屏休眠
