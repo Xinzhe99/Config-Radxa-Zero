@@ -5,8 +5,6 @@
 ### 1.1 下载系统镜像
 [official](https://docs.radxa.com/zero/zero3/getting-started/download)
 
-![image](https://github.com/Xinzhe99/Config-Radxa-Zero/assets/113503163/24b2a545-1474-4326-8620-c2f19561d010)
-
 ### 1.2 安装烧录软件
 [Etcher Download](https://etcher.balena.io/#download-etcher/)
 
