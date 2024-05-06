@@ -151,10 +151,6 @@ autologin-user-timeout=0
 ```
 ### 5. 编写自启程序sh
 ```
-# 关闭自动休眠
-xset s off
-xset -dpms
-xset s noblank
 # 进入程序所在目录
 cd /opt/spinnaker/bin/
 # 存储 sudo 密码
