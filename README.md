@@ -123,11 +123,11 @@ If using multiple USB3 cameras, the USB-FS memory limit may need to exceed 1000.
 More information on these changes can be found at:
 <https://www.flir.com/support-center/iis/machine-vision/application-note/understanding-usbfs-on-linux>
 
-### 3.5：确保USB权限(添加给radxa用户即可)】
+### 3.5. 【选】确保USB权限(添加给radxa用户即可)】
 
 安装sdk过程中，会询问是否要加用户到权限群中，键入radxa即可
 
-### 4.修复sd卡
+### 3.6. 【选】修复sd卡
 若sd卡出现损坏，按照以下网站中方法2来进行格式化
 <https://tw.easeus.com/partition-manager-tips/restore-or-format-sd-card-to-full-capacity.html>
 ```
@@ -140,3 +140,26 @@ create partition primary
 format fs=ntfs（或 format fs=exfat）
 assign
 ```
+
+### 4. 设置自动登录
+开启自启程序需要设置桌面自动登录,修改 /etc/lightdm/lightdm.conf 文件
+
+sudo vim /etc/lightdm/lightdm.conf
+找到 [Seat:*] 下的 #autologin-user= ，将这个配置修改为你需要登录的用户
+
+[Seat:*]
+...
+autologin-user=radxa
+autologin-user-timeout=0
+...
+
+### 编写自启程序sh
+# 进入程序所在目录
+cd /opt/spinnaker/bin/
+# 存储 sudo 密码
+sudo_pwd="radxa"
+# 将 sudo 密码输入至 sudo 环境，运行Acquisition
+echo "${sudo_pwd}" | sudo -S ./Acquisition
+
+### 开启自启sh文件
+桌面中，找到系统应用里面的start application，把sh脚本添加进去即可
