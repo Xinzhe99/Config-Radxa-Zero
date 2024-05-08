@@ -163,3 +163,6 @@ echo "${sudo_pwd}" | sudo -S nohup ./Start_capture &
 桌面中，找到系统应用里面的start application，把sh脚本添加进去即可
 
 ### 7. 关闭系统自动息屏休眠
+
+### 8. 降级python版本到3.8
+<https://blog.csdn.net/gaoxiangfei/article/details/131242117>
