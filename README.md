@@ -166,3 +166,12 @@ echo "${sudo_pwd}" | sudo -S nohup ./Start_capture &
 
 ### 8. 降级python版本到3.8
 <https://blog.csdn.net/gaoxiangfei/article/details/131242117>
+
+### 9. 建立完局域网，互联网上不了的解决办法
+
+1. 界面中删除添加的ip地址
+2. 重启网络服务
+...
+sudo systemctl restart NetworkManager
+...
+
