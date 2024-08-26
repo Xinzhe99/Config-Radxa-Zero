@@ -14,6 +14,7 @@ root 默认没有设置密码，需要自己设置 "sudo passwd root"
 echo 'oceanthink' > /etc/hostname
 或者
 hostnamectl set-hostname oceanthink
+
 sudo reboot
 
 要将 oceanthink 添加到 /etc/hosts 文件中，你可以按照以下步骤操作：
@@ -29,18 +30,25 @@ sudo vim /etc/hosts
 在文件中找到类似以下内容的行：
 复制代码
 127.0.0.1   localhost
+
 127.0.1.1   radxa-zero3
+
 在这些行之后添加一行，将 oceanthink 添加为一个主机名。例如：
 复制代码
 127.0.1.1   oceanthink
+
 这会告诉系统 oceanthink 这个主机名对应的是 127.0.1.1。
+
 
 现在 /etc/hosts 文件可能看起来像这样：
 
 复制代码
 127.0.0.1   localhost
+
 127.0.1.1   radxa-zero3
+
 127.0.1.1   oceanthink
+
 或者，如果你想保留所有名称关联在同一 IP 上，你也可以将 oceanthink 添加到现有的 127.0.1.1 行：
 
 复制代码
@@ -59,7 +67,9 @@ ping oceanthink
 root 默认没有设置密码，需要自己设置 "sudo passwd root"
 使用管理员账号：
 sudo adduser oceanthink
+
 账号：oceanthink
+
 密码：123456
 
 ### 1.6 自动登录系统
