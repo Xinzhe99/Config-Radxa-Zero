@@ -10,6 +10,28 @@ root 默认没有设置密码，需要自己设置 "sudo passwd root"
 
 ### 1.3 【选】烧录失败后的操作
 下载低级格式化软件，格式化SD卡。[HDD LLF Low Level Format Tool](https://www.hddguru.com/software/HDD-LLF-Low-Level-Format-Tool/)
+### 1.4 修改主机名
+echo 'oceanthink' > /etc/hostname
+或者
+hostnamectl set-hostname oceanthink
+sudo reboot
+
+### 1.5 创建oceanthink用户
+root 默认没有设置密码，需要自己设置 "sudo passwd root"
+使用管理员账号：
+sudo adduser oceanthink
+账号：oceanthink
+密码：123456
+
+### 1.6 自动登录系统
+sudo gedit /etc/lightdm/lightdm.conf
+找到 [Seat:*] 下的 #autologin-user= ，将这个配置修改为你需要登录的用户
+
+[Seat:*]
+...
+autologin-user=oceanthink
+autologin-user-timeout=0
+...
 
 ## 2. 配置远程服务
 
