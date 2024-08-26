@@ -4,7 +4,7 @@
 
 ### 1.1 下载系统镜像
 [official](https://docs.radxa.com/zero/zero3/getting-started/download)
-
+root 默认没有设置密码，需要自己设置 "sudo passwd root"
 ### 1.2 安装烧录软件
 [Etcher Download](https://etcher.balena.io/#download-etcher/)
 
