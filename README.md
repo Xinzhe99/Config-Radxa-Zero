@@ -224,16 +224,30 @@ autologin-user-timeout=0
 不用这个了
 
 ### 6. 开启开机自启sh文件
+创建
 
-sudo nano /etc/rc.local
+sudo nano /etc/systemd/system/imgcap.service
+复制
+```
+[Unit]
+Description=Image Capture Service
+After=network.target
 
-Ctrl+C输入
+[Service]
+Type=simple
+ExecStart=/usr/bin/nohup /usr/local/bin/python3.8 /home/oceanthink/Documents/code/imgCap.py &
+User=oceanthink
+Restart=always
 
-加入nohup python3.8 /home/oceanthink/Documents/code/imgCap.py&
+[Install]
+WantedBy=multi-user.target
+```
+保存更改后,运行以下命令重新加载systemd并重启服务:
+sudo systemctl daemon-reload
+sudo systemctl restart imgcap
+使用 sudo systemctl status imgcap 可以查看服务状态,看是否已正常运行。
+这样imgCap.py 程序就由 systemd 服务以 Python 3.8 解释器在系统后台运行了,不受用户注销影响。后续可用 systemctl 的其他命令如 stop、start 等来控制这个服务。
 
-Ctrl+O保存
-
-Ctrl+X退出
 ### 7. 关闭系统自动息屏，以及休眠
 首先关闭屏幕保护 screensaver
 然后关闭挂起和休眠
@@ -241,12 +255,11 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 sudo reboot
 参考：https://blog.csdn.net/allway2/article/details/131524164?ops_request_misc=&request_id=&biz_id=102&utm_term=linux%E7%B3%BB%E7%BB%9F%20%E5%85%B3%E9%97%AD%E4%BC%91%E7%9C%A0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-131524164.142^v100^pc_search_result_base8&spm=1018.2226.3001.4187
 
-上面貌似没有用啊
-
-试试
+再加
 xset s off
 xset -dpms
 xset s noblank
+好像也没用 不管了
 
 ### 8. 降级python版本到3.8
 <https://blog.csdn.net/gaoxiangfei/article/details/131242117>
