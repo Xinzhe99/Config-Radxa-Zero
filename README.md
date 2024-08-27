@@ -188,7 +188,7 @@ autologin-user-timeout=0
 ### 5. 降级python版本到3.8
 <https://blog.csdn.net/gaoxiangfei/article/details/131242117>
 
-### 6. 开启开机自启sh文件
+### 6. 开启开机自启
 创建服务
 ```
 sudo nano /etc/systemd/system/imgcap.service
