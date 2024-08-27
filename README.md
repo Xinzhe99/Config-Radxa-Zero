@@ -232,6 +232,38 @@ echo "${sudo_pwd}" | sudo -S nohup ./Start_capture &
 ```
 ### 6. 开启开机自启sh文件
 桌面中，找到系统应用里面的start application，把sh脚本添加进去即可
+不行的话：
+sudo nano /etc/systemd/system/imgcap.service
+
+[Unit]
+Description=ImgCap Python Script
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/oceanthink/Documents/code/imgCap.py
+WorkingDirectory=/home/oceanthink/Documents/code
+User=oceanthink
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+StandardOutput=append:/home/oceanthink/imgcap.log
+StandardError=append:/home/oceanthink/imgcap.error.log
+
+# 确保进程不会因为超时而被杀死
+TimeoutStopSec=infinity
+SendSIGKILL=no
+
+# 保持网络连接
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+保存并退出（在 nano 中按 Ctrl+O，然后按 Enter，再按 Ctrl+X）。
+sudo systemctl daemon-reload
+sudo systemctl enable imgcap.service
+sudo systemctl start imgcap.service
+sudo systemctl status imgcap.service
 
 ### 7. 关闭系统自动息屏休眠
 
