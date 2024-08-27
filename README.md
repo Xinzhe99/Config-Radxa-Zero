@@ -229,7 +229,7 @@ sudo nano /etc/rc.local
 
 Ctrl+C输入
 
-加入python3 /home/oceanthink/Documents/code/imgCap.py
+加入nohup python3.8 /home/oceanthink/Documents/code/imgCap.py&
 
 Ctrl+O保存
 
