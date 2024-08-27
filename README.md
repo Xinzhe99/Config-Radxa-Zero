@@ -216,7 +216,7 @@ sudo vim /etc/lightdm/lightdm.conf
 ```
 [Seat:*]
 ...
-autologin-user=radxa
+autologin-user=oceanthink
 autologin-user-timeout=0
 ...
 ```
