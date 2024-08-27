@@ -126,7 +126,7 @@ source /etc/x11vnc.conf
 
 ![image](https://github.com/Xinzhe99/Config-Radxa-Zero/assets/113503163/a5d7a177-b823-4b4f-9eb8-161aa0b0298f)
 
-
+安装完sdk后，还要安装对应的python版本spinnaker！！！
 ### 3.2 安装gedit
 便于后面注释操作
 ```
