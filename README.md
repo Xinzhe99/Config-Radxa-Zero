@@ -146,53 +146,17 @@ sudo apt install gedit
 ```
 sudo gedit README_ARM
 ```
-### 3.4. 【选】确保buffer_size从16MB改到1000MB
-The Spinnaker installer asks to automatically set the appropriate USB-FS memory
-settings, but you can also run the configuration script at any time:
-```
-$ sudo sh configure_usbfs.sh
-```
-To manually configure the USB-FS memory:
 
-1. If the /etc/rc.local file does NOT already exist on your system, run the
-   following commands to create and make it executable
-```
-$ sudo touch /etc/rc.local
-$ sudo chmod 744 /etc/rc.local
-```
-2. Open the /etc/rc.local file in any text editor,
-   
-```
-$ sudo nano /etc/rc.local
-```
-and paste the following command at the end of the file:
-```
-sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb'
-```
-
-3. Save your changes and close the file.
-
-4. Restart the machine.
-
-To confirm that the memory limit has been updated, run the command:
-```
-$ cat /sys/module/usbcore/parameters/usbfs_memory_mb
-```
-If this fails to set the memory limit, one can TEMPORARILY modify the
-USB-FS memory until the next restart by running the following command:
-```
-$ sudo sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb'
-```
 
 If using multiple USB3 cameras, the USB-FS memory limit may need to exceed 1000.
 More information on these changes can be found at:
 <https://www.flir.com/support-center/iis/machine-vision/application-note/understanding-usbfs-on-linux>
 
-### 3.5. 【选】确保USB权限(添加给radxa用户即可)】
+### 3.4. 确保USB权限(添加给oceanthink用户)】
 
-安装sdk过程中，会询问是否要加用户到权限群中，键入radxa即可
+安装sdk过程中，会询问是否要加用户到权限群中，键入oceanthink即可
 
-### 3.6. 【选】修复sd卡
+### 3.5. 【选】修复sd卡
 若sd卡出现损坏，按照以下网站中方法2来进行格式化
 <https://tw.easeus.com/partition-manager-tips/restore-or-format-sd-card-to-full-capacity.html>
 ```
@@ -220,14 +184,16 @@ autologin-user=oceanthink
 autologin-user-timeout=0
 ...
 ```
-### 5. 编写自启程序sh
-不用这个了
+
+### 5. 降级python版本到3.8
+<https://blog.csdn.net/gaoxiangfei/article/details/131242117>
 
 ### 6. 开启开机自启sh文件
-创建
-
+创建服务
+```
 sudo nano /etc/systemd/system/imgcap.service
-复制
+```
+输入，逐一nohup和python3.8的路径需要对
 ```
 [Unit]
 Description=Image Capture Service
@@ -249,20 +215,18 @@ sudo systemctl restart imgcap
 这样imgCap.py 程序就由 systemd 服务以 Python 3.8 解释器在系统后台运行了,不受用户注销影响。后续可用 systemctl 的其他命令如 stop、start 等来控制这个服务。
 
 ### 7. 关闭系统自动息屏，以及休眠
-首先关闭屏幕保护 screensaver
+关闭屏幕保护 screensaver
 然后关闭挂起和休眠
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 sudo reboot
 参考：https://blog.csdn.net/allway2/article/details/131524164?ops_request_misc=&request_id=&biz_id=102&utm_term=linux%E7%B3%BB%E7%BB%9F%20%E5%85%B3%E9%97%AD%E4%BC%91%E7%9C%A0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-131524164.142^v100^pc_search_result_base8&spm=1018.2226.3001.4187
 
-再加
+关闭黑屏
 xset s off
 xset -dpms
 xset s noblank
 好像也没用 不管了
 
-### 8. 降级python版本到3.8
-<https://blog.csdn.net/gaoxiangfei/article/details/131242117>
 
 ### 9. 建立完局域网，互联网上不了的解决办法
 
