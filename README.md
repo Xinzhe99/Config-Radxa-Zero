@@ -235,7 +235,11 @@ Ctrl+O保存
 
 Ctrl+X退出
 ### 7. 关闭系统自动息屏，以及休眠
-
+首先关闭屏幕保护 screensaver
+然后关闭挂起和休眠
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+sudo reboot
+参考：https://blog.csdn.net/allway2/article/details/131524164?ops_request_misc=&request_id=&biz_id=102&utm_term=linux%E7%B3%BB%E7%BB%9F%20%E5%85%B3%E9%97%AD%E4%BC%91%E7%9C%A0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-131524164.142^v100^pc_search_result_base8&spm=1018.2226.3001.4187
 ### 8. 降级python版本到3.8
 <https://blog.csdn.net/gaoxiangfei/article/details/131242117>
 
