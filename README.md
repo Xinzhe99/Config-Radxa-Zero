@@ -220,7 +220,7 @@ sudo systemctl status imgcap
 在powermanagement应用里面全关掉
 
 
-### 9. 建立完局域网，互联网上不了的解决办法
+### 8. 建立完局域网，互联网上不了的解决办法
 
 1. 界面中删除添加的ip地址
 2. 重启网络服务
@@ -228,3 +228,5 @@ sudo systemctl status imgcap
 sudo systemctl restart NetworkManager
 ...
 
+### 9. 制作镜像
+要用u盘或者移动硬盘，挂载，ext的能被识别
