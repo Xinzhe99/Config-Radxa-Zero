@@ -209,23 +209,15 @@ Restart=always
 WantedBy=multi-user.target
 ```
 保存更改后,运行以下命令重新加载systemd并重启服务:
+```
 sudo systemctl daemon-reload
 sudo systemctl restart imgcap
-使用 sudo systemctl status imgcap 可以查看服务状态,看是否已正常运行。
+sudo systemctl status imgcap
+```
 这样imgCap.py 程序就由 systemd 服务以 Python 3.8 解释器在系统后台运行了,不受用户注销影响。后续可用 systemctl 的其他命令如 stop、start 等来控制这个服务。
 
 ### 7. 关闭系统自动息屏，以及休眠
-关闭屏幕保护 screensaver
-然后关闭挂起和休眠
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-sudo reboot
-参考：https://blog.csdn.net/allway2/article/details/131524164?ops_request_misc=&request_id=&biz_id=102&utm_term=linux%E7%B3%BB%E7%BB%9F%20%E5%85%B3%E9%97%AD%E4%BC%91%E7%9C%A0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-131524164.142^v100^pc_search_result_base8&spm=1018.2226.3001.4187
-
-关闭黑屏
-xset s off
-xset -dpms
-xset s noblank
-好像也没用 不管了
+在powermanagement应用里面全关掉
 
 
 ### 9. 建立完局域网，互联网上不了的解决办法
