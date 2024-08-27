@@ -82,11 +82,11 @@ autologin-user=oceanthink
 autologin-user-timeout=0
 ...
 
-## 2. 配置远程服务
+## 2. 配置远程服务【不用这个】
 
 ### 2.1 登录系统
-用户名：radxa  
-密码：radxa
+用户名：oceanthink  
+密码：123456
 
 ### 2.2 查看radxa的ip
 ```
@@ -98,7 +98,7 @@ sudo apt-get update
 sudo apt-get install ssh
 sudo service ssh restart
 ```
-### 2.4 安装x11vnc并启动服务
+### 2.4 安装x11vnc并启动服务【不用这个】
 (亲测-原教程里面的tigerVNC配置成功但是VNCviewer连接不上)
 
 教程：https://blog.csdn.net/weixin_43878078/article/details/122137067
@@ -221,23 +221,18 @@ autologin-user-timeout=0
 ...
 ```
 ### 5. 编写自启程序sh
-```
-# 进入程序所在目录
-cd /home/radxa/Downloads/code
-# 存储 sudo 密码
-sudo_pwd="radxa"
-# 将 sudo 密码输入至 sudo 环境，运行Acquisition
-echo "${sudo_pwd}" | sudo -S nohup ./Start_capture &
-
-```
+不用这个了
 
 ### 6. 开启开机自启sh文件
-桌面中，找到系统应用里面的start application，把sh脚本添加进去即可
-不行的话：
+
 sudo nano /etc/rc.local
+
 Ctrl+C输入
+
 加入python3 /home/oceanthink/Documents/code/imgCap.py
+
 Ctrl+O保存
+
 Ctrl+X退出
 ### 7. 关闭系统自动息屏，以及休眠
 
