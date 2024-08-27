@@ -230,3 +230,12 @@ sudo systemctl restart NetworkManager
 
 ### 9. 制作镜像
 要用u盘或者移动硬盘，挂载，ext的能被识别
+
+### 10. 烧录
+1. 刷机
+2. 调整ip
+3. 开启服务
+```
+sudo systemctl restart imgcap
+```
+   
